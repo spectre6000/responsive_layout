@@ -71,6 +71,34 @@ nav {
       float: left;
     }
 
+    @media (max-width: 1056px) {
+
+      #nav-left {
+        width: 15em;
+      }
+
+        #nav-menu {
+          width: 4.75em;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+      #nav-left {
+        width: 10em;
+      }
+
+        #nav-logo {
+          width: 7.25em;
+        }
+
+        #nav-menu {
+          width: 2.75em;
+        }
+
+    }
+
 /* ===========================
 
             MAIN
@@ -129,10 +157,79 @@ main {
       background-color: blue;
     }
 
+    @media (max-width: 1024px) {
+
+      #headline {
+        height: 17.25em;
+        width: 100%;
+      }
+
+      #page-1-sub {
+        float: none;
+        width: 100%;
+        height: auto;
+        background-color: orange;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 0;
+      }
+
+        .page-1-article {
+          width: 32%;
+          margin-top: 1em 0 0 1em ;
+        }
+
+          .page-1-article:first-of-type {
+            width: 32%;
+            margin-top: 1em 0 0 1em ;
+          }
+
+          .page-1-article:last-of-type {
+            margin-top: 1em 0 0 1em ;
+          }
+
+    }
+
+    @media (max-width: 767px) {
+
+      #page1 {
+        padding: .5em 1em .5em 1em;
+      }
+
+      #headline {
+        height: 15.9em;
+        margin-top: .25em;
+      }
+
+      #page-1-sub {
+        display: block;
+      }
+
+      .page-1-article {
+        width: 100%;
+        height: 15.9em;
+        margin: .01em 0;
+      } 
+
+      .page-1-article:first-of-type {
+        width: 100%;
+        margin: .5em 0;
+      }
+
+      .page-1-article:last-of-type {
+        margin: .5em 0;
+      }
+
+      #page-1-ad {
+        height: 4em;
+      }
+
+    }
+
   .section {
     width: 100%;
+    display: block;
     background-color: green;
-    padding: 1.25em 5%;
   }
 
     .section-title {
@@ -140,41 +237,134 @@ main {
       background-color: red;
       height: 2.5em;
       width: 12em;
-      margin: 0 .5em 1.75em .5em;
+      margin: 1.25em 0 1.75em 5%;
     }
 
     .section-link {
       float: right;
       background-color: red;
-      margin: 1em .5em 1.75em .5em;
+      margin: 2.25em 5% 1.75em 0;
       height: 1.5em;
       width: 10em;
     }
 
     .section-body {
       clear: both;
-      width: 100%;
+      max-width: 90%;
+      margin: 0 auto;
       background-color: yellow;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row wrap;
     }
 
       .story {
-        float: left;
         width: 18.76%;
         height: 22.75em;
         background-color: orange;
-        margin: 0 .5em 2em .5em;
+        margin: 0 0 2em 0;
       }
 
       .latest-article {
         width: 15.54%;
         height: 13em;
-        margin: 0 .45em .75em .45em;
       }
 
       .big-ad {
         background-color: blue;
         height: 16.75em;
       }
+
+        @media (max-width: 1152px) {
+
+          .story {
+            width: 23.5%;
+          }
+
+          .latest-article {
+            width: 18.5%;
+          }
+
+          .story:last-child, .latest-article:nth-of-type(11), .big-ad:nth-of-type(9) {
+            display: none;
+          }
+
+          .big-ad {
+            height: 16.75em;
+            display: inline-flex;
+          }
+
+        }
+
+        @media (max-width: 767px) {
+
+          .story {
+            width: 30%;
+          }
+
+          .story:nth-child(3) {
+            display: none;
+          }
+
+          .latest-article:nth-of-type(3), .big-ad:nth-of-type(3), .big-ad:nth-of-type(10), .latest-article:nth-of-type(11), .latest-article:nth-of-type(12) {
+            display: inline-block;
+          }
+
+          .latest-article {
+            width: 22.75%;
+          }
+
+        }
+
+        @media (max-width: 700px) {
+
+          .section-title {
+            width: 100%;
+            margin: 0;
+            padding-top: 1em;
+          }
+
+          .section-link {
+            display: none;
+          }
+
+          .section-body {
+            max-width: 100%;
+          }
+
+          .story {
+            width: 100%;
+            height: 4.5em;
+            border-bottom: 1px solid black;
+            margin: 0;
+          }
+
+          .story:nth-child(3), .story:last-child {
+            display: block;
+          }
+
+          .story:last-child {
+            margin-bottom: 1em;
+          }
+
+          .story:first-child {
+            width: 100%;
+            height: 27em;
+          }
+
+          .latest-article, .latest-article:first-child {
+            width: 31%;
+            height: 13em;
+          }
+        }
+
+        @media (max-width: 640px) {
+
+          .latest-article, .latest-article:first-child {
+            width: 48%;
+          }
+
+        }
 
   .ad {
     width: 45.5em;
@@ -183,6 +373,11 @@ main {
     margin: 2.05em auto 1.25em auto;
   }
 
+    @media (max-width: 767px) {
+      .ad {
+        display: none;
+      } 
+    }
 
 /* ===========================
 
@@ -196,7 +391,7 @@ footer {
 }
 
   #footer-head {
-    width: 70em;
+    width: 69.5em;
     height: 14.75em;
     background-color: teal;
     margin: 2.5em auto 0 auto;
@@ -240,13 +435,12 @@ footer {
 
       #footer-quote {
         height: 4.5em;
-        margin-top: 2em;
+        margin-top: 2.5em;
         background-color: yellow;
       }
 
     #footer-ads {
       float: right;
-      width: 45%;
       height: 5em;
       margin-top: 1em;
     }
@@ -267,9 +461,56 @@ footer {
   }
 
     #copyright {
-      /*margin: .5em 10.75%;*/
       width: 20em;
       height: 2em;
       background-color: orange;
     }
+
+    @media (max-width: 1152px) {
+
+        #footer-head {
+          width: 97%;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+      #footer-head {
+        height: 27em;
+        padding-top: 1.5em;
+      }
+
+      #footer-logo, #footer-nav, #footer-social, #footer-quote, #footer-ads {
+        float: none;
+        margin: 1em auto;
+        display: block;
+      }
+
+      #footer-ads {
+        width: 20em;
+      }
+
+      .footer-ad {
+        display: inline-block;
+        float: none;
+      }
+
+      #footer-social {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-social-link {
+        display: inline-block;
+      }
+
+      #copyright {
+        margin: 1em auto;
+      }
+
+    }
+
 
